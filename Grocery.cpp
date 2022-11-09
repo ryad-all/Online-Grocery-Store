@@ -1,18 +1,22 @@
 #include "Grocery.h"
 
 Grocery::Grocery()
-	: StoreName("Null")
+	: Name("Null")
 {
 }
 
 Grocery::Grocery(string name)
-	: StoreName(name)
+	: Name(name)
 {
+}
+string Grocery::getName()
+{
+	return Name;
 }
 
 void Grocery::setGroceryName(string name)
 {
-	StoreName = name;
+	Name = name;
 }
 
 Grocery::~Grocery()

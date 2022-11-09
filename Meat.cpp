@@ -1,6 +1,14 @@
 #include "Meat.h"
 
-Meat::Meat(){}
+
+Meat::Meat() : Grocery()
+{
+
+}
+Meat::Meat(string name) : Grocery(name)
+{
+
+}
 
 Meat::~Meat()
 {
@@ -9,5 +17,5 @@ Meat::~Meat()
 
 void Meat::print() const
 {
-	cout << "Meat.\n";
+	cout << "Class Meat.\n";
 }

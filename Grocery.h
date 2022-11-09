@@ -6,15 +6,17 @@ using namespace std;
 
 class Grocery
 {
-private:
-	string StoreName;
+protected:
+	string Name;
 public:
 	Grocery();
 	Grocery(string);
-	virtual ~Grocery(); //when polymorphism
-
-	virtual void print() const = 0 ; //pure virtua which forces print functions of derived classes
-		
+	virtual ~Grocery();
+	
+	string getName();
+	virtual void print() const = 0 ; 
+	virtual float getCost() const = 0;
+	
 	void setGroceryName(string);
 };
 

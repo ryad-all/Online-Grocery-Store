@@ -3,13 +3,15 @@
 class Meat :
     public Grocery
 {
-private:
 
 public:
     Meat();
+    Meat(string);
+    
+    
     virtual ~Meat();
       
-    virtual void print() const override; //overrides grocery print 
+    virtual void print() const; 
 
 };
 
