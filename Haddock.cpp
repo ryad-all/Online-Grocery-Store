@@ -1,7 +1,7 @@
 #include "Haddock.h"
 
 Haddock::Haddock(float x) 
-	: HaddockStock(30), HaddockPrice(20), CustomerPriceHaddock(0)
+	: Fish("Haddock"), HaddockStock(30), HaddockPrice(20), CustomerPriceHaddock(0)
 {
 
 	if (HaddockStock >= x)

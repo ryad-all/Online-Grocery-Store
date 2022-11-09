@@ -1,7 +1,7 @@
 #include "Milk.h"
 
 Milk::Milk(float x)
-	: MilkStock(200), MilkPrice(2), CustomerPriceMilk(0)
+	: Dairy("Milk"), MilkStock(200), MilkPrice(2), CustomerPriceMilk(0)
 {
 	MilkStock -= x;
 	if (MilkStock <= x)
@@ -41,6 +41,3 @@ Milk::~Milk()
 	cout << "Object of class Milk has been desroyed. \n";
 }
 
-// Beef* b = new  Beef(10);
-//Milk* m =  new Milk(1);
-// 

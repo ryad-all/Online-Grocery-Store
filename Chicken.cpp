@@ -1,7 +1,7 @@
 #include "Chicken.h"
 
 Chicken::Chicken(float x)
-	: ChickenStock(200), ChickenPrice(20), CustomerPriceChicken(0)
+	: Meat("Chicken"), ChickenStock(200), ChickenPrice(20), CustomerPriceChicken(0)
 {
 	if (ChickenStock <= x)
 		ChickenStock -= x;

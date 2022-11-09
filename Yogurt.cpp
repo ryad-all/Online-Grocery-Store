@@ -1,7 +1,7 @@
 #include "Yogurt.h"
 
 Yogurt::Yogurt(float x)
-	: YogurtStock(30), YogurtPrice(25), CustomerPriceYogurt(0)
+	: Dairy("Yoogurt"), YogurtStock(30), YogurtPrice(25), CustomerPriceYogurt(0)
 {
 	YogurtStock -= x;
 	if (YogurtStock <= x)

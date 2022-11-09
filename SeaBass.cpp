@@ -1,7 +1,7 @@
 #include "SeaBass.h"
 
 SeaBass::SeaBass(float x)
-	: SeaBassStock(40), SeaBassPrice(15), CustomerPriceSeaBass(0)
+	: Fish("SeaBass"), SeaBassStock(40), SeaBassPrice(15), CustomerPriceSeaBass(0)
 {
 
 	if (SeaBassStock >= x)

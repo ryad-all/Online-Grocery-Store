@@ -6,6 +6,7 @@ class Dairy :
 private:
 public:
     Dairy();
+    Dairy(string);
     virtual ~Dairy();
 
     void virtual print() const;

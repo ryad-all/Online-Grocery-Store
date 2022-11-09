@@ -1,7 +1,9 @@
 #include "Dairy.h"
 
-Dairy::Dairy()
+Dairy::Dairy() : Grocery("Dairy")
 {}
+
+Dairy::Dairy(string str) : Grocery(str) {}
 
 void Dairy::print() const
 {

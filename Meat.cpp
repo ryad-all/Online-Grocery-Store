@@ -5,7 +5,12 @@ Meat::Meat() : Grocery()
 {
 
 }
-Meat::Meat(string name) : Grocery(name)
+Meat::Meat() : Grocery("Meat")
+{
+
+}
+
+Meat::Meat(string str) : Grocery(str)
 {
 
 }

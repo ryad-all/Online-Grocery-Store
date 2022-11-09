@@ -7,12 +7,15 @@
 class CustomerOrder
 {
 private:
-	Grocery* groceryArray[20];
+	
+	Grocery* groceryArray[15];
+	
 	static int OrderNumber;
 	float orderCost;
 public:
 	CustomerOrder(Grocery** ptr, int);
-	
+	CustomerOrder();
+	virtual ~CustomerOrder();
 
 	float getCost() const; 
 };

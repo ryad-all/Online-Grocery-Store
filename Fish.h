@@ -7,6 +7,7 @@ private:
 
 public:
     Fish();
+    Fish(string);
     virtual ~Fish();
     virtual float getCost() const = 0;
     virtual void print() const; //overrides grocery print 

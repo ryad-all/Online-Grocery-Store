@@ -5,6 +5,7 @@ class Pantry :
 {
 public:
     Pantry();
+    Pantry(string);
     virtual ~Pantry();
 
     void virtual print() const;

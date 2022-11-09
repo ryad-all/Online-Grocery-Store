@@ -1,6 +1,8 @@
 #include "Pantry.h"
 
-Pantry::Pantry()
+Pantry::Pantry() : Grocery("Pantry") {}
+
+Pantry::Pantry(string str) : Grocery(str)
 {}
 
 void Pantry::print() const

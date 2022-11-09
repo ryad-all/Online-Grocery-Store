@@ -1,14 +1,26 @@
 #include "Grocery.h"
 
-Grocery::Grocery()
-	: Name("Null")
+Grocery::Grocery(string name, float pric, float y)
+	: Name("Null"), stock(y), price(pric)
 {
+}
+Grocery::Grocery(const Grocery& copy) : Name(copy.Name), price(copy.price), stock(copy.stock)
+{
+}
+void Grocery::setName(string x)
+{
+	Name = x;
+}
+void Grocery::setPrice(float x)
+{
+	price = x;
+}
+void Grocery::setStock(float x)
+{
+	stock = x;
 }
 
-Grocery::Grocery(string name)
-	: Name(name)
-{
-}
+
 string Grocery::getName()
 {
 	return Name;

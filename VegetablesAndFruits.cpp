@@ -1,6 +1,8 @@
 #include "VegetablesAndFruits.h"
 
-VegetablesAndFruits::VegetablesAndFruits() {}
+VegetablesAndFruits::VegetablesAndFruits() : Grocery("VegetablesAndFruits") {}
+
+VegetablesAndFruits::VegetablesAndFruits(string str) : Grocery(str) {}
 
 VegetablesAndFruits::~VegetablesAndFruits()
 {

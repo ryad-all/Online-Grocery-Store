@@ -1,7 +1,7 @@
 #include "Salmon.h"
 
 Salmon::Salmon(float x)
-	:SalmonStock(50), SalmonPrice(28), CustomerPriceSalmon(0)
+	:Fish("Salmon"), SalmonStock(50), SalmonPrice(28), CustomerPriceSalmon(0)
 {
 	if (SalmonStock >= x)
 		CustomerPriceSalmon *= SalmonPrice;

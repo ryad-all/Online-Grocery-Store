@@ -5,6 +5,9 @@ class VegetablesAndFruits :
 {
 public:
     VegetablesAndFruits();
+    VegetablesAndFruits(string);
+
+
     ~VegetablesAndFruits();
 
     void virtual print() const;

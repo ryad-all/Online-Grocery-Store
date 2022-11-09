@@ -1,7 +1,7 @@
 #include "Cheese.h"
 
 Cheese::Cheese(float x)
-	: CheeseStock(30), CheesePrice(25), CustomerPriceCheese(0)
+	:Dairy("Cheese"), CheeseStock(30), CheesePrice(25), CustomerPriceCheese(0)
 {
 	CheeseStock -= x;
 	if (CheeseStock <= x)
