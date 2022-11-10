@@ -2,9 +2,8 @@
 
 
 
-Grocery::Grocery(string nam, float stk, float pr)
+Grocery::Grocery(float stk, float pr)
 {
-	Name = nam;
 	stock = stk;
 	price = pr;
 }

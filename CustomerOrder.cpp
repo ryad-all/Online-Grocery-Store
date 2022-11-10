@@ -29,7 +29,7 @@ CustomerOrder::CustomerOrder(const CustomerOrder& cpy)
 {
 	for (int i = 0; i < 11; i++)
 	{
-		if (groceryArray[i] != nullptr)
+		if (groceryArray[i] == nullptr)
 			groceryArray[i] = new Grocery(*cpy.groceryArray[i]);
 	}
 	orderCost = cpy.orderCost;

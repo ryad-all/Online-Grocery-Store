@@ -12,9 +12,10 @@ int main()
 	arr[0] = new Beef(100, 15, 2.5);
 	arr[1] = new Chicken(200, 10, 4);
 
-	cout << arr[0]->getName();
+	arr[1]->print();
 	CustomerOrder* order1 = new CustomerOrder();
-	order1->insertProduct(arr[0]);
+	if (order1->insertProduct(arr[0]))
+		cout << "ok";
 
 	GroceryManager* manager = new GroceryManager();
 

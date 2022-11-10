@@ -11,7 +11,7 @@ private:
 	float stock;
 	float price;
 public:
-	Grocery(string nam, float stk, float pr);
+	Grocery(float stk, float pr);
 	Grocery();
 	Grocery(const Grocery&);
 	void updateStock(float);
