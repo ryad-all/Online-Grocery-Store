@@ -7,9 +7,18 @@ private:
 
 public:
     Fish();
-    Fish(string);
+    Fish(float, float);
+   
     virtual ~Fish();
-    virtual float getCost() const = 0;
-    virtual void print() const; //overrides grocery print 
+
+    
+    Fish(const Fish&);
+
+
+  
+
+    
+
+    virtual void print() const override; //overrides grocery print 
 };
 

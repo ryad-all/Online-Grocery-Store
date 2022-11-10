@@ -1,34 +1,55 @@
 #include "Grocery.h"
 
-Grocery::Grocery(string name, float pric, float y)
-	: Name("Null"), stock(y), price(pric)
+
+
+Grocery::Grocery(string nam, float stk, float pr)
+{
+	Name = nam;
+	stock = stk;
+	price = pr;
+}
+Grocery::Grocery()
+{
+	Name = "NULL";
+	stock = 0;
+	price = 0;
+}
+Grocery::Grocery(const Grocery& copy) : Name(copy.Name), stock(copy.stock), price(copy.price)
 {
 }
-Grocery::Grocery(const Grocery& copy) : Name(copy.Name), price(copy.price), stock(copy.stock)
+
+void  Grocery::updateStock(float x)
 {
+	if (x <= stock)
+		stock -= x;
+}
+
+void Grocery::print() const
+{
+	cout << "Meat, Pantry, Dairy and VegetablesAndFruits\n";
+}
+
+
+string Grocery::getName() const
+{
+	return Name;
 }
 void Grocery::setName(string x)
 {
 	Name = x;
-}
-void Grocery::setPrice(float x)
-{
-	price = x;
-}
-void Grocery::setStock(float x)
-{
-	stock = x;
-}
+ }
 
-
-string Grocery::getName()
+float Grocery::getStock() const
 {
-	return Name;
+	return stock;
 }
-
-void Grocery::setGroceryName(string name)
+float Grocery::getPrice() const
 {
-	Name = name;
+	return price;
+}
+float Grocery::getCost() const
+{
+	return 0;
 }
 
 Grocery::~Grocery()

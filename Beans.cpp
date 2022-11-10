@@ -1,40 +1,31 @@
 #include "Beans.h"
 
-Beans::Beans(float x)
-	:Pantry("Beans"), BeansStock(80), BeansPrice(1.50), CustomerPriceBeans(0)
+Beans::Beans(float x, float y, float z) : Pantry(x, y)
 {
-	BeansStock -= x;
-	if (BeansStock <= x)
-		CustomerPriceBeans *= BeansPrice;
+	this->setName("Beans");
+	customerRequest = z;
+	this->updateStock(customerRequest);
+}
+
+Beans::Beans() : Pantry() {
+	this->setName("Beans");
+	customerRequest = 0;
 }
 
 
-void Beans::setBeansStock(float x)
-{
-	BeansStock = x;
-}
-void Beans::setBeansPrice(float x)
-{
-	BeansPrice = x;
+Beans::Beans(const Beans& copy) : Pantry(copy) {
+	this->setName("Beans");
+	customerRequest = copy.customerRequest;
 }
 
-
-float Beans::getBeansStock() const
+float Beans::getCost() const
 {
-	return BeansStock;
-}
-float Beans::getBeansPrice() const
-{
-	return BeansPrice;
+	return (this->getPrice()) * customerRequest;
 }
 
-float Beans::getCost() const 
-{
-	return CustomerPriceBeans;
-}
 void Beans::print() const
-{
-	cout << "The current Beans stock is " << this->BeansStock << " cans" << "  and its price per can is " << this->BeansPrice << endl;
+{ 
+	cout << "The current Beans stock is " << this->getStock() << " cans" << "  and its price per can is " << this->getPrice() << endl;
 }
 
 Beans::~Beans()

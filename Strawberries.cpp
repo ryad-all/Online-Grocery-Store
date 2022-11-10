@@ -1,44 +1,35 @@
 #include "Strawberries.h"
 
 
-Strawberries::Strawberries(float x)
-	:VegetablesAndFruits("Strawberries"), StrawberriesStock(50), StrawberriesPrice(2), CustomerPriceStrawberries(0)
+Strawberries::Strawberries(float x, float y, float z) : VegetablesAndFruits(x, y)
 {
-	StrawberriesStock -= x;
-	if (StrawberriesStock <= x)
-		CustomerPriceStrawberries *= StrawberriesPrice;
+	this->setName("Strawberries");
+	customerRequest = z;
+	this->updateStock(customerRequest);
+}
+
+Strawberries::Strawberries() : VegetablesAndFruits() {
+	this->setName("Strawberries");
+	customerRequest = 0;
 }
 
 
-void Strawberries::setStrawberriesStock(float x)
-{
-	StrawberriesStock = x;
-}
-void Strawberries::setStrawberriesPrice(float x)
-{
-	StrawberriesPrice = x;
+Strawberries::Strawberries(const Strawberries& copy) : VegetablesAndFruits(copy) {
+	this->setName("Strawberries");
+	customerRequest = copy.customerRequest;
 }
 
-
-float Strawberries::getStrawberriesStock() const
+float Strawberries::getCost() const
 {
-	return StrawberriesStock;
-}
-float Strawberries::getStrawberriesPrice() const
-{
-	return StrawberriesPrice;
+	return (this->getPrice()) * customerRequest;
 }
 
-float Strawberries::getCost() const // customer ammount in kg 
-{
-	return CustomerPriceStrawberries;
-}
 void Strawberries::print() const
 {
-	cout << "The current Strawberries stock is " << this->StrawberriesStock << " dozens" << "  and its price per dozen is " << this->StrawberriesPrice << endl;
+	cout << "The current Milk stock is " << this->getStock() << "kg" << "  and its price per kg is " << this->getPrice() << endl;
 }
 
 Strawberries::~Strawberries()
 {
-	cout << "Object of class Strawberries has been desroyed. \n";
+	cout << "Object of class Milk has been desroyed. \n";
 }

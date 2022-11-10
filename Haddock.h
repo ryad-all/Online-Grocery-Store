@@ -4,22 +4,15 @@ class Haddock :
     public Fish
 {
 private:
-    float HaddockStock; // in kg
-    float HaddockPrice; // $/kg
-    float CustomerPriceHaddock;
+    float customerRequest;
 public:
-    Haddock(float);
-    
-
+    Haddock();
+    Haddock(const Haddock& copy);
+    Haddock(float, float, float);
     virtual ~Haddock();
 
-    void print() const override;
+    virtual void print() const override;
 
-    void setHaddockStock(float);
-    void setHaddockPrice(float);
-
-    float getHaddockStock() const;
-    float getHaddockPrice() const;
 
     float getCost() const;
 };

@@ -1,41 +1,30 @@
 #include "Haddock.h"
 
-Haddock::Haddock(float x) 
-	: Fish("Haddock"), HaddockStock(30), HaddockPrice(20), CustomerPriceHaddock(0)
+Haddock::Haddock(float x, float y, float z) : Fish(x, y)
 {
-
-	if (HaddockStock >= x)
-		CustomerPriceHaddock *= HaddockPrice;
-	HaddockStock -= x;
-
+	this->setName("Haddock");
+	customerRequest = z;
+	updateStock(customerRequest);
 }
 
-
-void Haddock::setHaddockStock(float x)
-{
-	HaddockStock = x;
-}
-void Haddock::setHaddockPrice(float x)
-{
-	HaddockPrice = x;
+Haddock::Haddock() : Fish() {
+	this->setName("Haddock");
+	customerRequest = 0;
 }
 
-float Haddock::getHaddockStock() const
-{
-	return HaddockStock;
-}
-float Haddock::getHaddockPrice() const
-{
-	return HaddockPrice;
+Haddock::Haddock(const Haddock& copy) : Fish(copy) {
+	this->setName("Haddock");
+	customerRequest = copy.customerRequest;
 }
 
-float Haddock::getCost() const // customer ammount in kg 
+float Haddock::getCost() const
 {
-	return CustomerPriceHaddock;
+	return (this->getPrice()) * customerRequest;
 }
+
 void Haddock::print() const
 {
-	cout << "The current Haddock stock is " << this->HaddockStock << "kg" << " and its price per Kg is " << this->HaddockPrice << endl;
+	cout << "The current Haddock stock is " << this->getStock() << "kg" << " and its price per Kg is " << this->getPrice() << endl;
 }
 
 Haddock::~Haddock()

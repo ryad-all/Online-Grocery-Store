@@ -1,42 +1,32 @@
 #include "Cheese.h"
 
-Cheese::Cheese(float x)
-	:Dairy("Cheese"), CheeseStock(30), CheesePrice(25), CustomerPriceCheese(0)
+Cheese::Cheese(float x, float y, float z) : Dairy(x, y)
 {
-	CheeseStock -= x;
-	if (CheeseStock <= x)
-		CustomerPriceCheese *= CheesePrice;
+	this->setName("Cheese");
+	customerRequest = z;
+	this->updateStock(customerRequest);
+}
+
+Cheese::Cheese() : Dairy() {
+	this->setName("Cheese");
+	customerRequest = 0;
 }
 
 
-void Cheese::setCheeseStock(float x)
-{
-	CheeseStock = x;
-}
-void Cheese::setCheesePrice(float x)
-{
-	CheesePrice = x;
+Cheese::Cheese(const Cheese& copy) : Dairy(copy) {
+	this->setName("Cheese");
+	customerRequest = copy.customerRequest;
 }
 
-
-float Cheese::getCheeseStock() const
+float Cheese::getCost() const
 {
-	return CheeseStock;
-}
-float Cheese::getCheesePrice() const
-{
-	return CheesePrice;
+	return (this->getPrice()) * customerRequest;
 }
 
-float Cheese::getCost() const // customer ammount in kg 
-{
-	return CustomerPriceCheese;
-}
 void Cheese::print() const
 {
-	cout << "The current Cheese stock is " << this->CheeseStock << "Kg" << "  and its price per Kg is " << this->CheesePrice << endl;
+	cout << "The current Cheese stock is " << this->getStock() << "Liters" << "  and its price per Liter is " << this->getPrice() << endl;
 }
-
 Cheese::~Cheese()
 {
 	cout << "Object of class Cheese has been desroyed. \n";

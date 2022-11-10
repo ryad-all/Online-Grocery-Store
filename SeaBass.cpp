@@ -1,44 +1,34 @@
 #include "SeaBass.h"
 
-SeaBass::SeaBass(float x)
-	: Fish("SeaBass"), SeaBassStock(40), SeaBassPrice(15), CustomerPriceSeaBass(0)
+SeaBass::SeaBass(float x, float y, float z) : Fish(x, y)
 {
-
-	if (SeaBassStock >= x)
-		CustomerPriceSeaBass *= SeaBassPrice;
-	SeaBassStock -= x;
-	
+	this->setName("SeaBass");
+	customerRequest = z;
+	updateStock(customerRequest);
 }
 
-
-void SeaBass::setSeaBassStock(float x)
-{
-	SeaBassStock = x;
-}
-void SeaBass::setSeaBassPrice(float x)
-{
-	SeaBassPrice = x;
+SeaBass::SeaBass() : Fish() {
+	this->setName("SeaBass");
+	customerRequest = 0;
 }
 
-float SeaBass::getSeaBassStock() const
-{
-	return SeaBassStock;
-}
-float SeaBass::getSeaBassPrice() const
-{
-	return SeaBassPrice;
+SeaBass::SeaBass(const SeaBass& copy) : Fish(copy) {
+	this->setName("SeaBass");
+	customerRequest = copy.customerRequest;
 }
 
-float SeaBass::getCost() const// customer ammount in kg 
+float SeaBass::getCost() const
 {
-	return CustomerPriceSeaBass;
+	return (this->getPrice()) * customerRequest;
 }
+
+
 void SeaBass::print() const
 {
-	cout << "The current SeaBass stock is " << this->SeaBassStock << " kg" << "  and its price per Kg is " << this->SeaBassPrice << endl;
+	cout << "The current SeaBass stock is " << this->getStock() << "kg" << "  and its price per Kg is " << this->getPrice() << endl;
 }
 
 SeaBass::~SeaBass()
 {
-	cout << "Object of class SeaBass has been desroyed. \n";
+	cout << "Object of class Chicken has been desroyed. \n";
 }

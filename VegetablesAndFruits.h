@@ -3,14 +3,22 @@
 class VegetablesAndFruits :
     public Grocery
 {
+private:
+    float stock;
+    float price;
 public:
     VegetablesAndFruits();
-    VegetablesAndFruits(string);
+    VegetablesAndFruits(float, float);
+    VegetablesAndFruits(const VegetablesAndFruits&);
 
 
-    ~VegetablesAndFruits();
+    virtual ~VegetablesAndFruits();
+    virtual float getPrice() const;
+    virtual float getStock() const;
 
-    void virtual print() const;
+    void updateStock(float);
+
+    virtual void print() const;
 
 };
 

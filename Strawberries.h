@@ -4,20 +4,15 @@ class Strawberries :
     public VegetablesAndFruits
 {
 private:
-    float StrawberriesStock; // in dozen
-    float StrawberriesPrice; // $/dozen
-    float CustomerPriceStrawberries;
+    float customerRequest;
 public:
-    Strawberries(float);
+    Strawberries();
+    Strawberries(const Strawberries& copy);
+    Strawberries(float, float, float);
     virtual ~Strawberries();
 
-    void print() const override;
+    virtual void print() const override;
 
-    void setStrawberriesStock(float);
-    void setStrawberriesPrice(float);
-
-    float getStrawberriesStock() const;
-    float getStrawberriesPrice() const;
 
     float getCost() const;
 };

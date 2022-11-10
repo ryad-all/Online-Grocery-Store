@@ -1,40 +1,30 @@
 #include "Beef.h"
 
-Beef::Beef(float x)
-	:Meat("Beef"), BeefStock(100), BeefPrice(15), CustomerPriceBeef(0)	
+Beef::Beef(float x, float y, float z) : Meat(x, y)
 {
-	BeefStock -= x;
-	if (BeefStock <= x)
-	CustomerPriceBeef *= BeefPrice;
+	this->setName("Beef");
+	customerRequest = z;
+	this->updateStock(customerRequest);
 }
 
-
-void Beef::setBeefStock(float x)
-{
-	BeefStock = x;
-}
-void Beef::setBeefPrice(float x)
-{
-	BeefPrice = x;
-}
+Beef::Beef() : Meat() { 
+	this->setName("Beef");
+	customerRequest = 0; }
 
 
-float Beef::getBeefStock() const
-{
-	return BeefStock;
-}
-float Beef::getBeefPrice() const
-{
-	return BeefPrice;
+Beef::Beef(const Beef& copy) : Meat(copy) {
+	this->setName("Beef");
+	customerRequest = copy.customerRequest;
 }
 
-float Beef::getCost() const // customer ammount in kg 
+float Beef::getCost() const
 {
-	return CustomerPriceBeef;
+	return (this->getPrice()) * customerRequest;
 }
+
 void Beef::print() const
 {
-	cout << "The current beef stock is " << this->BeefStock << "Kg" << "  and its price per Kg is " << this->BeefPrice << endl;
+	cout << "The current beef stock is " << this->getStock() << "Kg" << "  and its price per Kg is " << this->getPrice() << endl;
 }
 
 Beef::~Beef()

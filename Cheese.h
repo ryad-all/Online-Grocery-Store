@@ -4,20 +4,15 @@ class Cheese :
     public Dairy
 {
 private:
-    float CheeseStock; // in L
-    float CheesePrice; // $/L
-    float CustomerPriceCheese;
+    float customerRequest;
 public:
-    Cheese(float);
+    Cheese();
+    Cheese(const Cheese& copy);
+    Cheese(float, float, float);
     virtual ~Cheese();
 
-    void print() const override;
+    virtual void print() const override;
 
-    void setCheeseStock(float);
-    void setCheesePrice(float);
-
-    float getCheeseStock() const;
-    float getCheesePrice() const;
 
     float getCost() const;
 

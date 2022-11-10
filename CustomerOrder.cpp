@@ -4,22 +4,36 @@ int CustomerOrder::OrderNumber = 1;
 
 CustomerOrder::CustomerOrder()
 {
-	for (int i = 0; i < 15;i++)
+	for (int i = 0; i < 11;i++)
 	{
 		groceryArray[i] = nullptr;
 	}
 	orderCost = 0;
 }
 
-CustomerOrder::CustomerOrder(Grocery** ptr, int len) 
+bool CustomerOrder::insertProduct(Grocery* ptr) 
 {
-	orderCost = 0;
-	for (int i = 0; i < len; i++)
+	for (int i = 0; i < 11; i++)
 	{
-		groceryArray[i] = ptr[i];
-		orderCost += ptr[i]->getCost();
+		if (groceryArray[i] == nullptr)
+		{
+			groceryArray[i] = new Grocery(*ptr);
+			OrderNumber++;
+			return true;
+		}
 	}
-	OrderNumber++;
+	return false;
+	
+}
+CustomerOrder::CustomerOrder(const CustomerOrder& cpy) 
+{
+	for (int i = 0; i < 11; i++)
+	{
+		if (groceryArray[i] != nullptr)
+			groceryArray[i] = new Grocery(*cpy.groceryArray[i]);
+	}
+	orderCost = cpy.orderCost;
+	OrderNumber = cpy.OrderNumber;
 }
 
 float CustomerOrder::getCost() const

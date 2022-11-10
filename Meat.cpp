@@ -1,19 +1,18 @@
 #include "Meat.h"
 
 
+Meat::Meat(float STOCK, float PRICE) : Grocery(STOCK, PRICE)
+{
+	this->setName("Meat");
+}
 Meat::Meat() : Grocery()
 {
-
+	this->setName("Meat");
 }
-Meat::Meat() : Grocery("Meat")
+Meat::Meat(const Meat& copy) : Grocery(copy)
 {
-
 }
 
-Meat::Meat(string str) : Grocery(str)
-{
-
-}
 
 Meat::~Meat()
 {
@@ -22,5 +21,5 @@ Meat::~Meat()
 
 void Meat::print() const
 {
-	cout << "Class Meat.\n";
+	cout << "Beef, chicken and fish\n";
 }

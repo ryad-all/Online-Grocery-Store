@@ -1,39 +1,31 @@
 #include "Salmon.h"
 
-Salmon::Salmon(float x)
-	:Fish("Salmon"), SalmonStock(50), SalmonPrice(28), CustomerPriceSalmon(0)
+Salmon::Salmon(float x, float y, float z) : Fish(x, y)
 {
-	if (SalmonStock >= x)
-		CustomerPriceSalmon *= SalmonPrice;
-	SalmonStock -= x;
+	this->setName("SeaBass");
+	customerRequest = z;
+	updateStock(customerRequest);
+}
+
+Salmon::Salmon() : Fish() {
+	this->setName("Salmon");
+	customerRequest = 0;
+}
+
+Salmon::Salmon(const Salmon& copy) : Fish(copy) {
+	this->setName("Salmon");
+	customerRequest = copy.customerRequest;
+}
+
+float Salmon::getCost() const
+{
+	return (this->getPrice()) * customerRequest;
 }
 
 
-void Salmon::setSalmonStock(float x)
-{
-	SalmonStock = x;
-}
-void Salmon::setSalmonPrice(float x)
-{
-	SalmonPrice = x;
-}
-
-float Salmon::getSalmonStock() const
-{
-	return SalmonStock;
-}
-float Salmon::getSalmonPrice() const
-{
-	return SalmonPrice;
-}
-
-float Salmon::getCost() const // customer ammount in kg 
-{
-	return CustomerPriceSalmon;
-}
 void Salmon::print() const
 {
-	cout << "The current Salmon stock is " << this->SalmonStock << " kg" << "  and its price per Kg is " << this->SalmonPrice << endl;
+	cout << "The current Salmon stock is " << this->getStock() << "kg" << "  and its price per Kg is " << this->getPrice() << endl;
 }
 
 Salmon::~Salmon()

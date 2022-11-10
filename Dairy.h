@@ -4,11 +4,20 @@ class Dairy :
     public Grocery
 {
 private:
+    float stock;
+    float price;
 public:
     Dairy();
-    Dairy(string);
-    virtual ~Dairy();
+    Dairy(float, float);
+    Dairy(const Dairy&);
 
-    void virtual print() const;
+
+    virtual ~Dairy();
+    virtual float getPrice() const;
+    virtual float getStock() const;
+
+    void updateStock(float);
+
+    virtual void print() const;
 };
 

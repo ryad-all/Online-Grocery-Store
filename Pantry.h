@@ -3,11 +3,22 @@
 class Pantry :
     public Grocery
 {
+private:
+    float stock;
+    float price;
 public:
     Pantry();
-    Pantry(string);
-    virtual ~Pantry();
+    Pantry(float, float);
+    Pantry(const Pantry&);
 
-    void virtual print() const;
+
+    virtual ~Pantry();
+    virtual float getPrice() const;
+    virtual float getStock() const;
+
+    void updateStock(float);
+
+    virtual void print() const;
+
 };
 

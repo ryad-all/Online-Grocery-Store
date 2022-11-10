@@ -1,42 +1,32 @@
 #include "Eggs.h"
 
-Eggs::Eggs(float x)
-	:Dairy("Eggs"), EggsStock(40), EggsPrice(3), CustomerPriceEggs(0)
+Eggs::Eggs(float x, float y, float z) : Dairy(x, y)
 {
-	EggsStock -= x;
-	if (EggsStock <= x)
-		CustomerPriceEggs *= EggsPrice;
+	this->setName("Eggs");
+	customerRequest = z;
+	this->updateStock(customerRequest);
+}
+
+Eggs::Eggs() : Dairy() {
+	this->setName("Eggs");
+	customerRequest = 0;
 }
 
 
-void Eggs::setEggsStock(float x)
-{
-	EggsStock = x;
-}
-void Eggs::setEggsPrice(float x)
-{
-	EggsPrice = x;
+Eggs::Eggs(const Eggs& copy) : Dairy(copy) {
+	this->setName("Eggs");
+	customerRequest = copy.customerRequest;
 }
 
-
-float Eggs::getEggsStock() const
+float Eggs::getCost() const
 {
-	return EggsStock;
-}
-float Eggs::getEggsPrice() const
-{
-	return EggsPrice;
+	return (this->getPrice()) * customerRequest;
 }
 
-float Eggs::getCost() const // customer ammount in kg 
-{
-	return CustomerPriceEggs;
-}
 void Eggs::print() const
 {
-	cout << "The current Eggs stock is " << this->EggsStock << " dozens" << "  and its price per dozen is " << this->EggsPrice << endl;
+	cout << "The current Eggs stock is " << this->getStock() << "Dozens" << "  and its price per dozen is " << this->getPrice() << endl;
 }
-
 Eggs::~Eggs()
 {
 	cout << "Object of class Eggs has been desroyed. \n";

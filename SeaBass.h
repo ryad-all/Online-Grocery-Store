@@ -4,21 +4,15 @@
 class SeaBass : public Fish
 {
 private:
-    float SeaBassStock; // in kg
-    float SeaBassPrice; // $/kg
-    float CustomerPriceSeaBass;
+    float customerRequest;
 public:
-    SeaBass(float);
-    
+    SeaBass();
+    SeaBass(const SeaBass& copy);
+    SeaBass(float, float, float);
     virtual ~SeaBass();
 
-    void print() const override;
+    virtual void print() const override;
 
-    void setSeaBassStock(float);
-    void setSeaBassPrice(float);
-
-    float getSeaBassStock() const;
-    float getSeaBassPrice() const;
 
     float getCost() const;
 };

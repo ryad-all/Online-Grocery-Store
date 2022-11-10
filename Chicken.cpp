@@ -1,39 +1,31 @@
 #include "Chicken.h"
 
-Chicken::Chicken(float x)
-	: Meat("Chicken"), ChickenStock(200), ChickenPrice(20), CustomerPriceChicken(0)
+Chicken::Chicken(float x, float y, float z) : Meat( x, y)
 {
-	if (ChickenStock <= x)
-		ChickenStock -= x;
+	this->setName("Chicken");
+	customerRequest = z;
+	updateStock(customerRequest);
 }
 
-
-void Chicken::setChickenStock(float x)
-{
-	ChickenStock = x;
-}
-void Chicken::setChickenPrice(float x)
-{
-	ChickenPrice = x;
+Chicken::Chicken() : Meat() { 
+	this->setName("Chicken");
+	customerRequest = 0; 
 }
 
-float Chicken::getChickenStock() const
-{
-	return ChickenStock;
-}
-float Chicken::getChickenPrice() const
-{
-	return ChickenPrice;
+Chicken::Chicken(const Chicken& copy) : Meat(copy) {
+	this->setName("Chicken");
+	customerRequest = copy.customerRequest;
 }
 
 float Chicken::getCost() const
 {
-	return CustomerPriceChicken;
+	return (this->getPrice()) * customerRequest;
 }
+
 
 void Chicken::print() const
 {
-	cout << "The current chicken stock is " << this->ChickenStock << "kg" << "  and its price per Kg is " << this->ChickenPrice << endl;
+	cout << "The current chicken stock is " << this->getStock() << "kg" << "  and its price per Kg is " << this->getPrice() << endl;
 }
 
 Chicken::~Chicken()

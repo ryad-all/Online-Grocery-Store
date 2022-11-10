@@ -3,14 +3,17 @@
 class Meat :
     public Grocery
 {
+private:
 
 public:
     Meat();
-    Meat(string);
+    Meat(float, float);
+    Meat(const Meat&);
     
     
     virtual ~Meat();
-      
+
+
     virtual void print() const; 
 
 };

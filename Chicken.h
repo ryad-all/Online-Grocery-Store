@@ -4,21 +4,15 @@ class Chicken :
     public Meat
 {
 private:
-    float ChickenStock; // in kg
-    float ChickenPrice; // $/kg
-    float CustomerPriceChicken;
+    float customerRequest;
 public:
-    Chicken(float);   
-
+    Chicken();
+    Chicken(const Chicken& copy);
+    Chicken(float, float, float);
     virtual ~Chicken();
 
-    void print() const override;
+    virtual void print() const override;
 
-    void setChickenStock(float);
-    void setChickenPrice(float);
-
-    float getChickenStock() const;
-    float getChickenPrice() const;
 
     float getCost() const;
 };

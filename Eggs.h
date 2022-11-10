@@ -4,20 +4,15 @@ class Eggs :
     public Dairy
 {
 private:
-    float EggsStock; // in dozen
-    float EggsPrice; // $/dozen
-    float CustomerPriceEggs;
+    float customerRequest;
 public:
-    Eggs(float);
+    Eggs();
+    Eggs(const Eggs& copy);
+    Eggs(float, float, float);
     virtual ~Eggs();
 
-    void print() const override;
+    virtual void print() const override;
 
-    void setEggsStock(float);
-    void setEggsPrice(float);
-
-    float getEggsStock() const;
-    float getEggsPrice() const;
 
     float getCost() const;
 };

@@ -4,20 +4,15 @@ class Yogurt :
     public Dairy
 {
 private:
-    float YogurtStock; // in L
-    float YogurtPrice; // $/L
-    float CustomerPriceYogurt;
+    float customerRequest;
 public:
-    Yogurt(float);
+    Yogurt();
+    Yogurt(const Yogurt& copy);
+    Yogurt(float, float, float);
     virtual ~Yogurt();
 
-    void print() const override;
+    virtual void print() const override;
 
-    void setYogurtStock(float);
-    void setYogurtPrice(float);
-
-    float getYogurtStock() const;
-    float getYogurtPrice() const;
 
     float getCost() const;
 
