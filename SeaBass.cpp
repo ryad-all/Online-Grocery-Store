@@ -27,7 +27,10 @@ void SeaBass::print() const
 {
 	cout << "The current SeaBass stock is " << this->getStock() << "kg" << "  and its price per Kg is " << this->getPrice() << endl;
 }
+Grocery* SeaBass::CloneObject() {
 
+	return new SeaBass(*this);
+}
 SeaBass::~SeaBass()
 {
 	cout << "Object of class Chicken has been desroyed. \n";

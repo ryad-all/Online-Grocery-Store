@@ -10,7 +10,7 @@ public:
 
 
     virtual ~VegetablesAndFruits();
- 
+    virtual Grocery* CloneObject();
 
     virtual void print() const;
 

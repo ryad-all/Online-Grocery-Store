@@ -3,7 +3,7 @@
 
 Meat::Meat(float STOCK, float PRICE) : Grocery(STOCK, PRICE)
 {
-	this->setName("Meat");
+	
 }
 Meat::Meat() : Grocery()
 {
@@ -11,9 +11,13 @@ Meat::Meat() : Grocery()
 }
 Meat::Meat(const Meat& copy) : Grocery(copy)
 {
+	this->setName("Meat");
 }
 
+Grocery* Meat::CloneObject() {
 
+	return new Meat(*this);
+}
 Meat::~Meat()
 {
 	cout << "Object of class Meat has been destoryed. \n";

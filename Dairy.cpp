@@ -2,15 +2,15 @@
 
 Dairy::Dairy() : Grocery()
 {
+	this->setName("Dairy");
 }
 Dairy::Dairy(float y, float z) : Grocery(y, z)
 {
-	this->setName("Dairy");
 
 }
 Dairy::Dairy(const Dairy& copy) : Grocery(copy)
 {
-
+	this->setName("Dairy");
 }
 Dairy::~Dairy()
 {

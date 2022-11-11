@@ -11,7 +11,7 @@ public:
 
 
     virtual ~Pantry();
-
+    virtual Grocery* CloneObject();
     virtual void print() const;
 
 };

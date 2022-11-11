@@ -27,12 +27,25 @@ int GroceryManager::search(string x)
 	}
 	return -1;
 }
+void GroceryManager::browse(string x)
+{
+	for (int i = 0; i < 50; i++)
+	{
+		if (RootArray[i] != nullptr)
+			if (RootArray[i]->getName() == x)
+			{
+				RootArray[i]->print();
+				break;
+			}
+	}
+	
+}
 bool GroceryManager::insertProducts(Grocery* x)
 {
 	for (int i = 0; i < 50; i++)
 	{
 		if (RootArray[i] == nullptr) {
-			RootArray[i] = new Grocery(*x);
+			RootArray[i] = x->CloneObject();
 			return true;
 		}
 	}

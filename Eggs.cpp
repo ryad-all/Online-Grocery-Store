@@ -22,7 +22,10 @@ float Eggs::getCost() const
 {
 	return (this->getPrice()) * customerRequest;
 }
+Grocery* Eggs::CloneObject() {
 
+	return new Eggs(*this);
+}
 void Eggs::print() const
 {
 	cout << "The current Eggs stock is " << this->getStock() << "Dozens" << "  and its price per dozen is " << this->getPrice() << endl;

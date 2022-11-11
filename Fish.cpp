@@ -1,10 +1,10 @@
 #include "Fish.h"
 
-Fish::Fish() : Meat() {}
+Fish::Fish() : Meat() { this->setName("Fish"); }
 
 Fish::Fish(float x, float y)  : Meat(x, y)
 {	
-	this->setName("Fish");
+	
 }
 Fish::Fish(const Fish& copy) : Meat(copy)
 {

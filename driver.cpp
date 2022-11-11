@@ -43,7 +43,7 @@ int main()
 		cout << arr1[4]->getName() << " product inserted in your order. \n";
 	cout << "Total cost of order is : " << order1->getCost() << "$ .\n";
 	if (manager->insertOrders(order1))
-		cout << "Orders inserted in data manager! \n";
+		cout << "Order inserted in data manager! \n";
 	cout << "-------------------------------------------------------------------------\n";
 	cout << "ORDER 2\n";
 	CustomerOrder* order2 = new CustomerOrder();
@@ -61,9 +61,28 @@ int main()
 		cout << arr2[5]->getName() << " product inserted in your order. \n";
 	cout << "Total cost of order is : " << order2->getCost() << "$ .\n";
 	if (manager->insertOrders(order2))
-		cout << "Orders inserted in data manager! \n";
+		cout << "Order inserted in data manager! \n";
 
 	cout << "-------------------------------------------------------------------------\n";
+	// inserting categories for the browsing function
+	Grocery* store = new Grocery();
+	Grocery* fish = new Fish();
+	Grocery* pantry = new Pantry();
+	Grocery* meat = new Meat();
+	Grocery* dairy = new Dairy();
+	Grocery* fruitsVegies = new VegetablesAndFruits();
+	if (manager->insertProducts(store))
+		cout << "Object inserted. \n";
+	if (manager->insertProducts(fish))
+		cout << "Object inserted. \n";
+	if (manager->insertProducts(pantry))
+		cout << "Object inserted. \n";
+	if (manager->insertProducts(meat))
+		cout << "Object inserted. \n";
+	if (manager->insertProducts(dairy))
+		cout << "Object inserted. \n";
+	if (manager->insertProducts(fruitsVegies))
+		cout << "Object inserted. \n";
 	////here, i am updating the stock 
 	//arr1[0] = new Beef(arr1[0]->getCost(), 15, 2.5);
 	//arr1[1] = new Chicken(arr1[0]->getCost(), 10, 4);
@@ -100,18 +119,51 @@ int main()
 	if (manager->insertProducts(arr2[5]))
 		cout << arr2[5]->getName() << " product inserted in data manager. \n";
 
+
+
 	cout << "-------------------------------------------------------------------------\n";
 	if (manager->search("Beef") != -1)
 	{
-		cout << "the element is in postion " << manager->search("Beef") << " of the array. \n";
+		cout << "Beef element is in postion " << manager->search("Beef") << " of the array. \n";
+	}
+	else {
+		cout << "Beef not found\n";
 	}
 	if (manager->search("Grocery") != -1)
 	{
-		cout << "the element is in postion " << manager->search("Grocery") << " of the array. \n";
+		cout << "Grocery element is in postion " << manager->search("Grocery") << " of the array. \n";
 	}
+	else {
+		cout << "Grocery not found\n";
+	}
+	if (manager->search("Chocolate") != -1)
+	{
+		cout << "Chocolate element is in postion " << manager->search("Grocery") << " of the array. \n";
+	}
+	else {
+		cout << "Chocolate not found\n";
+	}
+	cout << "-------------------------------------------------------------------------\n";
+	cout << "Whats in the store (browsing) : \n\n";
 	
 
+	
+	// browsing for some products bottom of hierarchy 
+	manager->browse("Beans");
+	manager->browse("Salmon");
+	manager->browse("Yogurt");
+	// Browsing what's in the store 
+	manager->browse("Grocery");
+	//browsing whats in the meat section
+	manager->browse("Meat");
 
-
+	cout << "-------------------------------------------------------------------------\n\n";
+	//object deletion
+	for (int i = 0; i < 11; i++)
+	{
+		delete arr1[i];
+		delete arr2[i];
+	}
+	delete store, fish, meat, pantry, dairy, fruitsVegies;
 	return 0;
 }

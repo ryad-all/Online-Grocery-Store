@@ -13,6 +13,7 @@ public:
 	int search(string);
 	bool insertProducts(Grocery*);
 	bool insertOrders(CustomerOrder*);
+	void browse(string x);
 
 };
 

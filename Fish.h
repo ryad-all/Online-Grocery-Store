@@ -19,6 +19,6 @@ public:
 
     
 
-    virtual void print() const override; //overrides grocery print 
+    virtual void print() const override; //overrides meat print 
 };
 

@@ -12,7 +12,7 @@ public:
     
     
     virtual ~Meat();
-
+    virtual Grocery* CloneObject();
 
     virtual void print() const; 
 

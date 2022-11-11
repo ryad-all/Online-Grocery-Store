@@ -26,7 +26,10 @@ void Haddock::print() const
 {
 	cout << "The current Haddock stock is " << this->getStock() << "kg" << " and its price per Kg is " << this->getPrice() << endl;
 }
+Grocery* Haddock::CloneObject() {
 
+	return new Haddock(*this);
+}
 Haddock::~Haddock()
 {
 	cout << "Object of class Haddock has been destroyed. \n";

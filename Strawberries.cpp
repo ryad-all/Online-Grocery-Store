@@ -26,9 +26,12 @@ float Strawberries::getCost() const
 
 void Strawberries::print() const
 {
-	cout << "The current Milk stock is " << this->getStock() << "kg" << "  and its price per kg is " << this->getPrice() << endl;
+	cout << "The current Milk stock is " << this->getStock() << "L" << "  and its price per Liter is " << this->getPrice() << endl;
 }
+Grocery* Strawberries::CloneObject() {
 
+	return new Strawberries(*this);
+}
 Strawberries::~Strawberries()
 {
 	cout << "Object of class Milk has been desroyed. \n";

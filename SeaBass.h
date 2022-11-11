@@ -12,7 +12,7 @@ public:
     virtual ~SeaBass();
 
     virtual void print() const override;
-
+    virtual Grocery* CloneObject();
 
     virtual float getCost() const;
 };

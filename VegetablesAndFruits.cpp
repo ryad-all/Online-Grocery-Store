@@ -2,7 +2,7 @@
 
 VegetablesAndFruits::VegetablesAndFruits() : Grocery()
 {
-
+	this->setName("VegetablesAndFruits");
 }
 VegetablesAndFruits::VegetablesAndFruits(float y, float z) : Grocery()
 {
@@ -13,7 +13,10 @@ VegetablesAndFruits::VegetablesAndFruits(const VegetablesAndFruits& copy) : Groc
 {
 }
 
-
+Grocery* VegetablesAndFruits::CloneObject()
+{
+	return new VegetablesAndFruits(*this);
+}
 
 VegetablesAndFruits::~VegetablesAndFruits()
 {

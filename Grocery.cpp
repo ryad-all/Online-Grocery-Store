@@ -9,7 +9,7 @@ Grocery::Grocery(float stk, float pr)
 }
 Grocery::Grocery()
 {
-	Name = "NULL";
+	Name = "Grocery";
 	stock = 0;
 	price = 0;
 }

@@ -12,7 +12,7 @@ public:
     virtual ~Chicken();
 
     virtual void print() const override;
-
+    virtual Grocery* CloneObject();
 
     virtual float getCost() const;
 };
