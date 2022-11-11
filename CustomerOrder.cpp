@@ -17,7 +17,9 @@ bool CustomerOrder::insertProduct(Grocery* ptr)
 	{
 		if (groceryArray[i] == nullptr)
 		{
-			groceryArray[i] = new Grocery(*ptr);
+			groceryArray[i] = ptr->CloneObject();
+			
+			orderCost += groceryArray[i]->getCost();
 			OrderNumber++;
 			return true;
 		}
@@ -27,6 +29,7 @@ bool CustomerOrder::insertProduct(Grocery* ptr)
 }
 CustomerOrder::CustomerOrder(const CustomerOrder& cpy) 
 {
+
 	for (int i = 0; i < 11; i++)
 	{
 		if (groceryArray[i] == nullptr)

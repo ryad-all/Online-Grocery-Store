@@ -7,13 +7,15 @@ private:
     float customerRequest;
 public:
     Beef();
-    Beef(const Beef& copy);
+    Beef(const Beef&);
     Beef(float, float, float);
     virtual ~Beef();
-
+    
     virtual void print() const override;
+
+    virtual Grocery* CloneObject();
     
 
-    float getCost() const;
+    virtual float getCost() const;
 };
 

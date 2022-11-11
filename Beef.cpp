@@ -19,12 +19,17 @@ Beef::Beef(const Beef& copy) : Meat(copy) {
 
 float Beef::getCost() const
 {
-	return (this->getPrice()) * customerRequest;
+	return (this->getPrice())*customerRequest;
 }
 
 void Beef::print() const
 {
 	cout << "The current beef stock is " << this->getStock() << "Kg" << "  and its price per Kg is " << this->getPrice() << endl;
+}
+
+Grocery* Beef::CloneObject() {
+
+	return new Beef(*this);
 }
 
 Beef::~Beef()

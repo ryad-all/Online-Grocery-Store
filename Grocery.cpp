@@ -17,6 +17,11 @@ Grocery::Grocery(const Grocery& copy) : Name(copy.Name), stock(copy.stock), pric
 {
 }
 
+Grocery* Grocery::CloneObject() {
+
+	return new Grocery(*this);
+}
+
 void  Grocery::updateStock(float x)
 {
 	if (x <= stock)

@@ -17,6 +17,7 @@ public:
 	void updateStock(float);
 	virtual ~Grocery();
 	
+	virtual Grocery* CloneObject();
 	virtual string getName() const;
 	void setName(string);
 	virtual float getStock() const;

@@ -11,6 +11,10 @@
 #include "SeaBass.h"
 #include "Salmon.h"
 #include "Haddock.h"
+#include "Cheese.h"
+#include "Strawberries.h"
+#include "Beans.h"
+
 
 class CustomerOrder
 {

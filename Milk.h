@@ -15,6 +15,6 @@ public:
     virtual void print() const override;
 
 
-    float getCost() const;
+    virtual float getCost() const;
 };
 

@@ -19,10 +19,11 @@ int GroceryManager::search(string x)
 {
 	for (int i = 0; i < 50; i++)
 	{
-		if (RootArray[i]->getName() == x)
-		{
-			return i;
-		}
+		if (RootArray[i] != nullptr)
+			if (RootArray[i]->getName() == x)
+			{
+				return i;
+			}
 	}
 	return -1;
 }
