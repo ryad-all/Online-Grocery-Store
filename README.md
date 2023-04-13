@@ -1,2 +1,2 @@
 # Grocery-Online-Store
- Online grocery store made with c++ 
+ Console App grocery store made with c++ 
